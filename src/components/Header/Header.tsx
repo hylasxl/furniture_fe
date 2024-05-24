@@ -1,10 +1,24 @@
 import { Fragment } from 'react/jsx-runtime';
 import { Grid, Link } from '@mui/material';
-import { TextField, Autocomplete, Button } from '@mui/material';
-import styles from './Header.module.scss';
+import { TextField, Autocomplete, Button, Badge } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+
+import styles from './Header.module.scss';
 
 const Header = () => {
+  const navigate = useNavigate()
+  const [cartItemsCount, setCartItemsCount] = useState(10)
+
+  const handleLoginButtonClick = () => {
+
+  }
+
+  const handleLogoutButtonClick = () => {
+
+  }
+
   return (
     <Fragment>
       <Grid className={styles.navigation_container} container spacing={2}>
@@ -27,11 +41,12 @@ const Header = () => {
               return (
                 <TextField
                   {...params}
-                  label='Search input'
+                  label='Nhập từ khóa'
                   InputProps={{
                     ...params.InputProps,
                     type: 'search'
                   }}
+                  className={styles.search_field}
                 />
               );
             }}
@@ -39,12 +54,24 @@ const Header = () => {
           ></Autocomplete>
         </Grid>
         <Grid xs={4} className={styles.login_and_cart_section}>
-          <ShoppingCartIcon className={styles.cart_icon} style={{ fontSize: '30px' }} />
+          <Badge badgeContent={cartItemsCount} color='primary' max={9} className={styles.badge}>
+            <ShoppingCartIcon className={styles.cart_icon} style={{ fontSize: '30px' }} />
+          </Badge>
           <Link>
-            <Button>Login</Button>
+            <Button
+              className={styles.login_button}
+              onClick={() => handleLoginButtonClick()}
+            >
+              Login
+            </Button>
           </Link>
           <Link>
-            <Button>Logout</Button>
+            <Button
+              className={styles.login_button}
+              onClick={() => handleLogoutButtonClick()}
+            >
+              Logout
+            </Button>
           </Link>
         </Grid>
       </Grid>

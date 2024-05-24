@@ -1,5 +1,5 @@
 .navigation_container {
-  padding: 20px 40px;
+  padding: 40px 40px;
   .logo_container {
     width: 252px;
     height: 65px;
@@ -17,4 +17,17 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  .login_button{
+    font-weight: bold;
+    &:hover{
+      color: #cb1c22;
+    }
+  }
+  .login_button_hidden{
+    display: none
+  }
+  .badge{
+    margin-right: 20px;
+  }
 }
+
