@@ -3,8 +3,9 @@ import { setupInterceptorsTo } from './axiosInterceptor.config';
 import { API_ROOT } from '../utils/constants';
 
 const instance: AxiosInstance = axios.create({
-  baseURL: API_ROOT,
-  withCredentials: true
+    baseURL: API_ROOT,
+    withCredentials: true,
+    headers: {}
 });
 
 const specificInstance = setupInterceptorsTo(instance);

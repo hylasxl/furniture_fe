@@ -1,0 +1,31 @@
+.admin_navigation_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000000;
+
+    .admin_navigation_section_links {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: flex-start;
+
+        p {
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    .admin_navigation_section_logout {
+        display: flex;
+        align-items: center;
+
+        p {
+            color: white;
+        }
+    }
+}
+
+.isActive {
+    color: red;
+}
